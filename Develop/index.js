@@ -104,6 +104,12 @@ inquirer
           }
       }
     },
+    {
+      message: "Please enter your GitHub link",
+      name: "github",
+      type: "input",
+    },
+
   ])
   .then((response) => {
     const joinedtoc=response.toc.join('\r');
@@ -234,15 +240,15 @@ inquirer
     console.log(badger);
     fs.appendFile(
       "readme.md",
-      `# ${response.title}  \r\r
+      `# ${response.title}  \r\r${badger}\r\r
 ## Description\r\r${response.description}\r\r
 ## Table of Contents\r\r${joinedtoc}\r\r
 ## Installation\r\r${response.installation}\r\r
 ## Usage\r\r${response.usage}\r\r
-## License\r\r${response.license}\r\r${badger}\r\r
+## License\r\r${response.license}\r\r
 ## Contributing\r\r${response.contributing}\r\r
 ## Tests\r\r${response.tests}\r\r
-## Questions\r\rEmail me at ${response.email} if you have any questions.` ,
+## Questions\r\rEmail me at ${response.email} or visit my github page ${response.github} if you have any questions.` ,
       (err) => (err ? console.error(err) : console.log("Commit logged!"))
     );
   });
