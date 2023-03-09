@@ -8,8 +8,8 @@ const tableContents = [
   "- [Installation](#installation)\r\r",
   "- [Usage](#usage)\r\r",
   "- [License](#license)\r\r",
+  "- [Contributing](#contributing)\r\r",
   "- [Credits](#credits)\r\r",
-  "- [License](#license)\r\r",
   "- [Tests](#tests)\r\r",
   "- [Questions](#questions)\r\r",
 ];
@@ -76,6 +76,11 @@ inquirer
         "BSD-3",
         "EPL1.0",
       ],
+    },
+    {
+      type: "input",
+      message: "Contributing",
+      name: "contributing",
     },
     {
       type: "input",
@@ -244,6 +249,7 @@ inquirer
 ## Installation\r\r${response.installation}\r\r
 ## Usage\r\r${response.usage}\r\r
 ## License\r\r${response.license}\r\r
+## Contributing\r\r${response.contributing}\r\r
 ## Credits\r\r${response.credits}\r\r
 ## Tests\r\r${response.tests}\r\r
 ## Questions\r\rEmail me at ${response.email} or visit my github page ${response.github} if you have any questions.`,
