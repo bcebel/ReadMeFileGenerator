@@ -1,9 +1,18 @@
-
 // TODO: Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
 init();
+const tableContents = [
+  "- [Description](#description)\r\r",
+  "- [Installation](#installation)\r\r",
+  "- [Usage](#usage)\r\r",
+  "- [License](#license)\r\r",
+  "- [Credits](#credits)\r\r",
+  "- [License](#license)\r\r",
+  "- [Tests](#tests)\r\r",
+  "- [Questions](#questions)\r\r",
+];
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -20,15 +29,6 @@ inquirer
       type: "input",
       message: "Description",
       name: "description",
-    },
-    {
-      type: "checkbox",
-      message: "Table of Contents",
-      name: "toc",
-      choices: ["- [Installation](#installation)\r\r"
-      ,"- [Usage](#usage)\r\r"
-      ,"- [Credits](#credits)\r\r"
-      ,"- [License](#license)\r\r"],
     },
     {
       type: "input",
@@ -79,8 +79,8 @@ inquirer
     },
     {
       type: "input",
-      message: "Contributing",
-      name: "contributing",
+      message: "Credits",
+      name: "credits",
     },
     {
       type: "input",
@@ -93,26 +93,24 @@ inquirer
       type: "input",
       default: () => {},
       validate: function (email) {
+        valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
 
-          valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
-
-          if (valid) {
-              return true;
-          } else {
-              console.log(".  Please enter a valid email")
-              return false;
-          }
-      }
+        if (valid) {
+          return true;
+        } else {
+          console.log(".  Please enter a valid email");
+          return false;
+        }
+      },
     },
     {
       message: "Please enter your GitHub link",
       name: "github",
       type: "input",
     },
-
   ])
   .then((response) => {
-    const joinedtoc=response.toc.join('\r');
+    const joinedtoc = tableContents.join("\r");
     const expr = response.license;
     console.log(expr);
     switch (expr.toString()) {
@@ -246,9 +244,9 @@ inquirer
 ## Installation\r\r${response.installation}\r\r
 ## Usage\r\r${response.usage}\r\r
 ## License\r\r${response.license}\r\r
-## Contributing\r\r${response.contributing}\r\r
+## Credits\r\r${response.credits}\r\r
 ## Tests\r\r${response.tests}\r\r
-## Questions\r\rEmail me at ${response.email} or visit my github page ${response.github} if you have any questions.` ,
+## Questions\r\rEmail me at ${response.email} or visit my github page ${response.github} if you have any questions.`,
       (err) => (err ? console.error(err) : console.log("Commit logged!"))
     );
   });
