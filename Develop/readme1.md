@@ -32,13 +32,15 @@ The project is run using node js. You will need to clone the repository. Navigat
 
 ## Usage
 
-This is a screenshot of a blank version of the auto generated readme
-
 <img src="./screenshot.png" alt="screenshot" title="screenshot" width="500" height="600">
 
 ## License
 
 MIT
+
+## Contributing
+
+Feel free to contribute!
 
 ## Credits
 
