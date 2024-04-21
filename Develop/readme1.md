@@ -28,7 +28,7 @@ This program will generate a readme file from the user input.
 
 ## Installation
 
-The project is run using node js. You will need to clone the repository. Navigate to the Develop file in the terminal. Make sure to install the programs in the package.json file by running (which includes inquirer8.2.4) by running "npm install" from the command line. Then run "node index.js" from the command line. Follow the prompts to populate your readme file!
+The project is run using node js. You will need to clone the repository. Navigate to the Develop file in the terminal. Make sure to install the programs in the package.json file (which includes inquirer8.2.4) by running "npm install" from the command line. Then run "node index.js" from the command line. Follow the prompts to populate your readme file!
 
 ## Usage
 
